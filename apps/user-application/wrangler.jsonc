@@ -10,12 +10,19 @@
   "assets": {
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/auth/*", "/trpc/*", "/click-socket"]
   },
   "observability": {
     "enabled": true,
   },
   "env": {
     "stage": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "stage.smartlinks.marjoncamba.com"
+        }
+      ],
       "d1_databases": [
         {
           "binding": "DB",
@@ -32,6 +39,12 @@
       ]
     },
     "production": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "smartlinks.marjoncamba.com"
+        }
+      ],
       "d1_databases": [
         {
           "binding": "DB",

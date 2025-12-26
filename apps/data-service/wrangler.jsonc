@@ -15,6 +15,12 @@
   },
   "env": {
     "stage": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "stage.go.smartlinks.marjoncamba.com"
+        }
+      ],
       "browser": {
         "binding": "VIRTUAL_BROWSER",
       },
@@ -94,6 +100,12 @@
       ]
     },
     "production": {
+      "routes": [
+        {
+          "custom_domain": true,
+          "pattern": "go.smartlinks.marjoncamba.com"
+        }
+      ],
       "browser": {
         "binding": "VIRTUAL_BROWSER",
       },
