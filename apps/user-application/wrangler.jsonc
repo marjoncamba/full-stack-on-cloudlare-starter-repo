@@ -7,16 +7,29 @@
   "name": "user-application",
   "main": "worker/index.ts",
   "compatibility_date": "2025-06-17",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": ["/api/auth/*", "/trpc/*", "/click-socket"]
+    "run_worker_first": [
+      "/api/auth/*",
+      "/trpc/*",
+      "/click-socket"
+    ]
   },
   "observability": {
     "enabled": true,
   },
   "env": {
     "stage": {
+      "vars": {
+        "STRIPE_PRODUCT_BASIC": "price_1SiqOnCvrqYpi1h832t9ARRk",
+        "STRIPE_PRODUCT_PRO": "price_1SiqTJCvrqYpi1h8rIs6i0J0",
+        "STRIPE_PRODUCT_ENTERPRISE": "price_1SiqV6CvrqYpi1h8LNRqZVcm",
+        "GOOGLE_CLIENT_ID": "1002508319116-sqj7svkcdtarvt21f7obssopsll8lr9m.apps.googleusercontent.com"
+      },
       "routes": [
         {
           "custom_domain": true,
